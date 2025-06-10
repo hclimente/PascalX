@@ -107,9 +107,8 @@ class refpanel:
         self._refData = filename
         self._srcData = sourcefilename
 
-        NF = []
-
         if filename is not None:
+            NF = []
             if chrlist is None:
                 for i in range(1,23):
                     if not os.path.isfile(filename+".chr"+str(i)+".idx.gz") or not os.path.isfile(filename+".chr"+str(i)+".db"):
@@ -118,6 +117,8 @@ class refpanel:
                 for i in chrlist:
                     if not os.path.isfile(filename+".chr"+str(i)+".idx.gz") or not os.path.isfile(filename+".chr"+str(i)+".db"):
                         NF.append(i)
+        else:
+            NF = list(range(1, 23))
             
         # Import if missing
         if len(NF) > 0:
