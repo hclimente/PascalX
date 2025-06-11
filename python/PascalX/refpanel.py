@@ -136,7 +136,7 @@ class refpanel:
         with gzip.open(fn+'.chr'+str(i)+'.tped.gz','rt') as f:
             
             db = snpdb.db()
-            db.open(self._refData+'.chr'+str(i))
+            db.open(fn+'.chr'+str(i))
             
             for line in f:
                
